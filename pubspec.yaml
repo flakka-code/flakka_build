@@ -14,7 +14,7 @@ dependencies:
   flakka_protobuf_build_types:
     git: https://github.com/flakka-code/flakka_protobuf_build_types
   glob:
-  path_provider:
+#  path_provider:
   protobuf:
   scratch_space:
 
