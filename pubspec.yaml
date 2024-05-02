@@ -1,7 +1,7 @@
 name: flakka_build
 description: Builders for a flakka runtime
 repository: https://github.com/flakka-code/flakka_build
-version: 0.1.2-alpha
+version: 0.1.2-alpha.1
 
 environment:
   sdk: "^3.3.0"
