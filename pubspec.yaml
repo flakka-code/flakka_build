@@ -24,6 +24,6 @@ dev_dependencies:
   test: ^1.25.2
   very_good_analysis: ^5.1.0
 
-dependency_overrides:
-  flakka_buf_runner:
-    path: ../flakka_buf_runner
+#dependency_overrides:
+#  flakka_buf_runner:
+#    path: ../flakka_buf_runner
