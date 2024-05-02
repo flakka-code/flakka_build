@@ -6,7 +6,24 @@ publish_to: none
 environment:
   sdk: "^3.3.0"
 
+dependencies:
+  build:
+  build_config:
+  build_runner:
+  build_runner_core:
+  flakka_protobuf_build_types:
+    git: https://github.com/flakka-code/flakka_protobuf_build_types
+  glob:
+#  path_provider:
+  protobuf:
+  scratch_space:
+
 dev_dependencies:
+  build_test:
   mocktail: ^1.0.3
   test: ^1.25.2
   very_good_analysis: ^5.1.0
+
+#dependency_overrides:
+#  flakka_buf_runner:
+#    path: ../flakka_buf_runner
