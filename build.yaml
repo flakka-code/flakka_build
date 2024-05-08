@@ -1,0 +1,67 @@
+targets:
+  $default:
+    builders:
+      image:
+        enabled: true
+        generate_for:
+          include:
+            - proto/**
+            - lib/**
+#            - proto/*/image.binpb
+#            - lib/**/buf.yaml
+#            - lib/**/image.binpb
+#            - lib/**/buf.yaml
+#            - lib/**/image.binpb
+#        generate_for:
+#          include:
+#            - proto/*
+#            - proto/**/buf.yaml
+#            - proto/**/image.binpb
+#            - proto/**/*.proto
+#      module:
+#        enabled: true
+#        generate_for:
+#          include:
+#            - proto/**/image.binpb
+#      aggregate:
+#        enabled: true
+#        generate_for:
+#          include:
+#            - proto/**/module.binpb
+#      freezed:
+#        enabled: true
+#        generate_for:
+#          exclude:
+#            - test
+#            - example
+#          include:
+#            - test/integration/*
+#            - test/integration/**/*
+#      source_gen|combining_builder:
+#        options:
+#          ignore_for_file:
+#            - "type=lint"
+
+builders:
+  image:
+    import: "package:flakka_build/builder_factories.dart"
+    builder_factories: ["image"]
+    build_extensions: { "buf.yaml": ["image.binpb"] }
+    auto_apply: dependents
+    build_to: source
+#    runs_before: ["module"]
+#    applies_builders: ["module"]
+#  module:
+#    import: "package:flakka_build/builder_factories.dart"
+#    builder_factories: ["module"]
+#    build_extensions: { "image.binpb": ["module.binpb"] }
+#    auto_apply: dependents
+#    build_to: source
+#    runs_before: ["aggregate"]
+#    applies_builders: ["aggregate"]
+#  aggregate:
+#    import: "package:flakka_build/builder_factories.dart"
+#    builder_factories: ["aggregate"]
+#    build_extensions: { "^proto/{{module}}/module.binpb": ['lib/{{module}}/{{module}}_api.dart'] }
+#    auto_apply: dependents
+#    build_to: source
