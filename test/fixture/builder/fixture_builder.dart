@@ -22,7 +22,9 @@ Iterable<ImageFile> buildAggregateFixture(AggregateFixture aggregate) =>
     );
 
 Iterable<ImageFile> buildEntityFixture(
-    EntityFixture entity, String parentPackage,) {
+  EntityFixture entity,
+  String parentPackage,
+) {
   final package = '$parentPackage.${entity.name}';
   return [
     ...buildMutation(entity.mutation, package, entity.name),
@@ -32,19 +34,28 @@ Iterable<ImageFile> buildEntityFixture(
 }
 
 Iterable<ImageFile> buildEventFixture(
-    EventFixture event, String parentPackage, String entityName,) {
+  EventFixture event,
+  String parentPackage,
+  String entityName,
+) {
   final package = '$parentPackage.event';
   return [
     ...event.variant.map(
-        (variant) => buildEventVariantFixture(variant, package, entityName),),
+      (variant) => buildEventVariantFixture(variant, package, entityName),
+    ),
     buildImageFile('${entityName}_event', package),
-      // ..options.setExtension(Annotations.file,
-      //     KalixFileOptions(eventSourcedEntity: EventSourcedEntity()))
+    // ..options.setExtension(Annotations.file,
+    //     KalixFileOptions(eventSourcedEntity: EventSourcedEntity()))
   ];
 }
 
 ImageFile buildEventVariantFixture(
-    EventVariantFixture eventVariant, String package, String entityName,) {
+  EventVariantFixture eventVariant,
+  String package,
+  String entityName,
+) {
   return buildImageFile(
-      '${entityName}_${eventVariant.name}', '$package.${eventVariant.name}',);
+    '${entityName}_${eventVariant.name}',
+    '$package.${eventVariant.name}',
+  );
 }

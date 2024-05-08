@@ -11,8 +11,8 @@ ImageFile buildImageFile(
   String package,
 ) =>
     ImageFile(
-        name: '$fileName.proto',
-        package: '$package.v1',
-        // options: FileOptions()
-        //   ..setExtension(Annotations.file, KalixFileOptions()),
+      name: '$fileName.proto',
+      package: '$package.v1',
+      // options: FileOptions()
+      //   ..setExtension(Annotations.file, KalixFileOptions()),
     );
