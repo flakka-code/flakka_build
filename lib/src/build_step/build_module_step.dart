@@ -28,6 +28,7 @@ extension type BuildEntityStep(BuildAggregateStep buildStep)
     throw UnimplementedError();
   }
 }
+
 ///
 extension type BuildEventStep(BuildEntityStep buildStep)
     implements BuildEntityStep {

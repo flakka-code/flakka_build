@@ -6,11 +6,11 @@ import '../struct/struct.dart';
 import 'util.dart';
 
 Iterable<ImageFile> buildMutation(
-    MutationFixture mutation, String parentPackage, String entityName) {
+    MutationFixture mutation, String parentPackage, String entityName,) {
   final package = '$parentPackage.mutation';
   return [
     ...mutation.dispatchCommand.expand(
-        (command) => buildDispatchCommand(command, package, entityName)),
+        (command) => buildDispatchCommand(command, package, entityName),),
     // buildCommandBase(package, entityName),
     // buildErrorBase(package, entityName),
     ...buildState(mutation.state, package, entityName),
@@ -38,7 +38,8 @@ Iterable<ImageFile> buildDispatchCommand(
 //     ));
 // }
 
-ImageFile buildCommandParam(String package, String entityName, String commandName) {
+ImageFile buildCommandParam(
+    String package, String entityName, String commandName,) {
   final name = '${entityName}_${commandName}_param';
   return buildImageFile(name, '$package.command.$commandName')
     ..messageType.add(DescriptorProto(name: name.toPascalCase()));
@@ -57,7 +58,7 @@ ImageFile buildError(String package, String entityName, String commandName) {
 }
 
 Iterable<ImageFile> buildState(
-    StateFixture state, String parentPackage, String entityName) {
+    StateFixture state, String parentPackage, String entityName,) {
   final package = '$parentPackage.internal.state';
   return [
     buildImageFile('${entityName}_state', package)

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:build/build.dart';
 
-import '../../flakka_build.dart';
+import 'package:flakka_build/flakka_build.dart';
 
 // class ModuleBuilder extends Builder {
 //   ///
@@ -51,7 +51,7 @@ class ModuleBuilder extends ImageBuilder {
     //         .toList();
   }
 
-  late final List<AggregateBuilder> _aggregateBuilders;
+  // late final List<AggregateBuilder> _aggregateBuilders;
 
   @override
   FutureOr<void> buildImageFile(BuildModuleStep buildStep) {
@@ -60,13 +60,13 @@ class ModuleBuilder extends ImageBuilder {
   }
 
   ///
-  @override
   List<String> get outputExtensions => ['lib/module/{{module}}_api.dart'];
 
   @override
   FutureOr<void> build(BuildStep buildStep) =>
       buildImageFile(BuildModuleStep(buildStep));
 
+  // @override
   @override
   Map<String, List<String>> get buildExtensions =>
       {'^proto/{{module}}/module.binpb': outputExtensions};
@@ -82,8 +82,7 @@ class AggregateBuilder extends ImageBuilder {
     throw UnimplementedError();
   }
 
-  @override
-  // TODO: implement outputExtensions
+  ///
   List<String> get outputExtensions => throw UnimplementedError();
 }
 
@@ -94,8 +93,7 @@ class EntityBuilder extends ImageBuilder {
     throw UnimplementedError();
   }
 
-  @override
-  // TODO: implement outputExtensions
+  ///
   List<String> get outputExtensions => throw UnimplementedError();
 }
 
@@ -106,7 +104,6 @@ class EventBuilder extends ImageBuilder {
     throw UnimplementedError();
   }
 
-  @override
-  // TODO: implement outputExtensions
+  ///
   List<String> get outputExtensions => throw UnimplementedError();
 }

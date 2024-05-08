@@ -18,7 +18,7 @@ Iterable<ImageFile> buildProjection(
 }
 
 Iterable<ImageFile> buildViewQuery(
-    ViewQueryFixture viewQuery, String parentPackage, String entityName) {
+    ViewQueryFixture viewQuery, String parentPackage, String entityName,) {
   final package = '$parentPackage.query';
   final queryName = '${entityName}_${viewQuery.name}';
   return [
@@ -28,17 +28,16 @@ Iterable<ImageFile> buildViewQuery(
   ];
 }
 
-
 ImageFile buildQuery(QueryFixture query, String package, String name) {
   return buildImageFile(name, package);
 }
 
 Iterable<ImageFile> buildViewResult(
-    ViewResultFixture viewResult, String package, String entityName) {
+    ViewResultFixture viewResult, String package, String entityName,) {
   return [buildImageFile('${entityName}_view_result', package)];
 }
 
 ImageFile buildViewState(
-    ViewStateFixture viewState, String package, String entityName) {
+    ViewStateFixture viewState, String package, String entityName,) {
   return buildImageFile('${entityName}_internal.view_state', package);
 }

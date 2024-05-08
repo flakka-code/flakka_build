@@ -7,8 +7,11 @@ import '../fixture/simple_aggregate_module_fixture.dart';
 void main() {
   group('FlakkaBuild', () {
     test('can be instantiated', () {
-      print(SimpleAggregateModuleFixture.module1Module);
-      print(SimpleAggregateModuleFixture.module1Fixture);
+      assert(
+        SimpleAggregateModuleFixture.module1Module.aggregate.isNotEmpty,
+        '',
+      );
+      assert(SimpleAggregateModuleFixture.module1Fixture.file.isNotEmpty, '');
       expect(FlakkaBuild(), isNotNull);
     });
   });

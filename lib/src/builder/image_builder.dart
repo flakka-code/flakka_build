@@ -34,7 +34,7 @@ class ImageBuilder extends Builder {
 
   @override
   Map<String, List<String>> get buildExtensions => {
-        'buf.yaml': ['image.binpb']
+        'buf.yaml': ['image.binpb'],
       };
 
   ///

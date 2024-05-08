@@ -1,2 +1,2 @@
-class BuildModuleConfig {
-}
+///
+class BuildModuleConfig {}
