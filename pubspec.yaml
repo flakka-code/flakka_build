@@ -26,9 +26,3 @@ dev_dependencies:
   mocktail: ^1.0.3
   test: ^1.25.2
   very_good_analysis: ^5.1.0
-
-dependency_overrides:
-#  flakka_buf_runner:
-#    path: ../flakka_buf_runner
-  flakka_protobuf_build_types:
-    path: ../flakka_protobuf_build_types
