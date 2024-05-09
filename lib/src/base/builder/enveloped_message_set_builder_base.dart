@@ -1,0 +1,2 @@
+///
+base class EnvelopedMessageSetBuilderBase {}

@@ -1,6 +1,5 @@
 import 'package:flakka_protobuf_build_types/buf/alpha/image/v1/image.pb.dart';
 import 'package:flakka_protobuf_build_types/google/protobuf/descriptor.pb.dart';
-// import 'package:flakka_protobuf_build_types/google/protobuf/descriptor.pbserver.dart';
 
 ///
 class ModuleDescriptorProto {

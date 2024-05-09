@@ -64,7 +64,7 @@ class ModuleBuilder extends ImageBuilder {
 
   @override
   FutureOr<void> build(BuildStep buildStep) =>
-      buildImageFile(BuildModuleStep(buildStep));
+      buildImageFile(BuildModuleStep(BuildImageStep(buildStep)));
 
   // @override
   @override
