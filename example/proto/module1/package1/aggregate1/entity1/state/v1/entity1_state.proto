@@ -1,0 +1,12 @@
+syntax = 'proto3';
+
+package domain1.package1.aggregate1.entity1.mutation.state.v1;
+
+import "flakka/v1alpha1/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+option (flakka.v1alpha1.file) = {};
+
+message Entity1State {
+  string property_value_1 = 10;
+}

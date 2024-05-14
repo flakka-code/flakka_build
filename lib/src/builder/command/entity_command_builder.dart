@@ -1,0 +1,3 @@
+class EntityCommandBuilder extends ComponentBuilder {
+
+}

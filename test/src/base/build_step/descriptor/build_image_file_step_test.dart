@@ -50,6 +50,7 @@ void main() {
     });
 
     test('should return null if no matching ImageFile', () async {
+
       final sourceAssets = {
         '$package|proto/module1/image.binpb': Image(
           file: [

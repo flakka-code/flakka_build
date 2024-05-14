@@ -1,0 +1,18 @@
+syntax = 'proto3';
+
+package domain1.package1.aggregate1.entity1.mutation.command.v1;
+
+import 'domain1/package1/aggregate1/entity1/mutation/command/command1/v1/entity1_command1.proto';
+import "flakka/v1alpha1/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+option (flakka.v1alpha1.file) = {};
+
+message Entity1Command {
+  string id = 1;
+  string subject = 2;
+  google.protobuf.Timestamp time = 3;
+  oneof payload {
+    command1.v1.Entity1Command1 command1 = 10;
+  }
+}

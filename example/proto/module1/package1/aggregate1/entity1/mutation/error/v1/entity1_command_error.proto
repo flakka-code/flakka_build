@@ -1,0 +1,18 @@
+syntax = 'proto3';
+
+package domain1.package1.aggregate1.entity1.mutation.error.v1;
+
+import 'domain1/package1/aggregate1/entity1/mutation/error/command1_error/v1/entity1_command1_error.proto';
+import "flakka/v1alpha1/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+option (flakka.v1alpha1.file) = {};
+
+message Entity1CommandError {
+  string id = 1;
+  string subject = 2;
+  google.protobuf.Timestamp time = 3;
+  oneof payload {
+    error.command1_error.v1.Entity1Command1Error command1_error = 10;
+  }
+}
