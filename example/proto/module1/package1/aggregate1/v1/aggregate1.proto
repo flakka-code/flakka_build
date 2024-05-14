@@ -1,0 +1,6 @@
+syntax = 'proto3';
+package domain1.package1.aggregate1.v1;
+
+import "flakka/v1alpha2/options.proto";
+
+option (flakka.v1alpha1.event_envelope) = {};

@@ -30,7 +30,7 @@ class ImageBuilder extends Builder {
 
   @override
   FutureOr<void> build(BuildStep buildStep) =>
-      buildImageFile(BuildModuleStep(buildStep));
+      buildImageFile(BuildModuleStep(BuildImageStep(buildStep)));
 
   @override
   Map<String, List<String>> get buildExtensions => {
